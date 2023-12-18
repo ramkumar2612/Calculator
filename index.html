@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <style>
+        *
+        {
+            padding: 0px;
+            margin: 0px;
+        }
+        body
+        {
+            background-image: url('./cal.jpg');
+            background-size: 100%;
+            background-attachment: fixed;
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 95%;
+        }
+        .buttons
+        {
+            width: 15%;
+            height: 8vh;
+            margin: 6px;
+            margin-top: 15px;
+            position: relative;
+            top: 15vh;
+            left: 4vw;
+            color: white;
+            border-radius: 30px;
+            box-shadow: 3px 3px rgb(121, 111, 111);
+            border: 3px rgb(121, 111, 111);
+            background-color: rgb(0, 0, 0);
+            font-size: 20px;
+            
+        }
+        #showValues
+        {
+            width: 80%;
+            height: 8vh;
+            position: absolute;
+            top: 4%;
+            left: 3vw;
+            border-radius: 5px;
+            background-color: rgb(0, 0, 0);
+            font-size: 30px;
+            outline: none;
+            color: whitesmoke;
+            border:groove 8px rgb(155,155,155);
+            box-shadow:2px 2px 5px  black;
+        }
+        #container
+        {
+            position: relative;
+            background-color: black;
+            width: 35%;
+            height: 80%;
+            border-radius: 20px;
+            border: 6px solid gray;
+        }
+        #equal
+        {
+            width: 34%;
+            color: rgb(0, 0, 162);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <form name="display">
+        <input name="ans" id="showValues">
+        <br>
+        <input type="button" class="buttons" value="1" onclick="display.ans.value+='1'">
+        <input type="button" class="buttons" value="2" onclick="display.ans.value+='2'">
+        <input type="button" class="buttons" value="3" onclick="display.ans.value+='3'">
+        <input type="button" class="buttons" value="Del" onclick="count()" style="color: rgb(0, 0, 162);">
+        <br>
+        <input type="button" class="buttons" value="4" onclick="display.ans.value+='4'">
+        <input type="button" class="buttons" value="5" onclick="display.ans.value+='5'">
+        <input type="button" class="buttons" value="6" onclick="display.ans.value+='6'">
+        <input type="button" class="buttons" value="C" onclick="display.ans.value=''" style="background-color: red; color: rgb(0, 0, 162);">
+        <br>
+        <input type="button" class="buttons" value="7" onclick="display.ans.value+='7'">
+        <input type="button" class="buttons" value="8" onclick="display.ans.value+='8'">
+        <input type="button" class="buttons" value="9" onclick="display.ans.value+='9'">
+        <input type="button" class="buttons" value="+" onclick="display.ans.value+='+'" style="color: rgb(0, 0, 162);">
+        <br>
+        <input type="button" class="buttons" value="%" onclick="display.ans.value+='%'" style="color: rgb(0, 0, 162);">
+        <input type="button" class="buttons" value="0" onclick="display.ans.value+='0'">
+        <input type="button" class="buttons" value="-" onclick="display.ans.value+='-'" style="color: rgb(0, 0, 162);">
+        <input type="button" class="buttons" value="*" onclick="display.ans.value+='*'" style="color: rgb(46, 46, 237);">
+        <br>
+        <input type="button" class="buttons" value="." onclick="display.ans.value+='.'" style="color: rgb(0, 0, 162);">
+        <input type="button" class="buttons" value="/" onclick="display.ans.value+='/'" style="color: rgb(0, 0, 162);">
+        <input type="button" class="buttons" value="=" onclick="display.ans.value=eval (display.ans.value)" id="equal">
+    </form>
+    </div>
+    <script>
+        function count()
+        {
+            var show = document.getElementById("showValues").value
+            document.getElementById("showValues").value=show.substring(0,show.length-1);
+        }
+    </script>
+</body>
+</html>
